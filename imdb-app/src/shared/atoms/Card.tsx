@@ -12,6 +12,8 @@ interface ICardProps {
 export const Card = styled.div<Partial<DefaultProps> & ICardProps>`
   background-color: ${colors.PRIMARY_COLOR};
   border-radius: 5px;
+  border: 1px solid #dee2e6;
+  box-shadow: 2px 2px 13px 2px rgba(0,0,0,0.15);
   height: ${({ height }) => height};
   width: ${({ width }) => width};
   ${({ css }) => css}

@@ -13,6 +13,7 @@ export const CardInfo: React.FC<ICardInfoProps> = ({ title, description }) => {
     <Box padding='10px'>
       <Heading4>{title}</Heading4>
       <Text1>{description}</Text1>
+
     </Box>
   );
 };

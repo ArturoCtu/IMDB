@@ -4,20 +4,26 @@ import { Card } from "shared/atoms/Card";
 import { Image } from "shared/atoms/Image";
 import { CardInfo } from "shared/molecules/CardInfo";
 
-export const MovieCard = () => {
+interface IMovieCardProps {
+ title: string;
+ description: string;
+ poster: string;
+}
+
+export const MovieCard: React.FC<IMovieCardProps> = ({ title, description, poster }) => {
   return (
-    <Card width="210px">
+    <Card width="230px">
       <Image
-        src="https://images-na.ssl-images-amazon.com/images/I/91Lpv1aIkmL._AC_SL1500_.jpg"
-        aria-label=""
+        src={poster}
+        aria-label={`${title} Poster`}
         css={`
           border-top-left-radius: 5px;
           border-top-right-radius: 5px;
         `}
       />
       <CardInfo
-        title="The Avengers"
-        description="This movie was written by..."
+        title={title}
+        description={description}
       />
     </Card>
   );
