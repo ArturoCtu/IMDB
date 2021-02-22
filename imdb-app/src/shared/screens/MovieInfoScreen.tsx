@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { MovieCard } from "shared/organisms/MovieCard";
 import { getMovieById } from "services/moviedb";
-import { Row, Col, Layout } from "antd";
+import { Row, Layout } from "antd";
 import { Texts } from "shared/atoms/Texts";
 import { useParams } from "react-router-dom";
 import { Image } from "shared/atoms/Image";
