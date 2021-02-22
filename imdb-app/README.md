@@ -19,6 +19,9 @@ Check different lists on Movies Database, mark favorites, sort them and view the
 - 16 hours in 4 days.
 
 ## How to run
+### `yarn install`
+For the first run and every time you pull changes.
+
 ### `yarn start`
 
 Runs the app in the development mode.\
