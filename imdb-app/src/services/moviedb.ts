@@ -10,7 +10,6 @@ const nowPlayingMoviesURI = `${URL}/movie/now_playing`;
 interface IMovieInfo {
   id: string;
   title: string;
-  overview: string;
   backdrop_path: string;
   vote_average: string;
 }
@@ -36,7 +35,6 @@ export const fetchMovies = async (listType: string) => {
     const moviesData = data["results"].map((movieInfo: IMovieInfo) => ({
       id: movieInfo["id"],
       title: movieInfo["title"],
-      description: movieInfo["overview"],
       poster: postersURI + movieInfo["backdrop_path"],
       rating: movieInfo["vote_average"],
     }));
@@ -55,6 +53,7 @@ export const getMovieById = async (id: string) => {
         language: "en_US",
       },
     });
+    console.log(data);
     const movieData = {
       id: data["id"],
       title: data["title"],
@@ -62,6 +61,7 @@ export const getMovieById = async (id: string) => {
       description: data["overview"],
       poster: postersURI + data["backdrop_path"],
       rating: data["vote_average"],
+      duration: data["runtime"],
     };
 
     return movieData;

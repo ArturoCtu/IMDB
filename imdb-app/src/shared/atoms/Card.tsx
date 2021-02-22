@@ -18,4 +18,8 @@ export const Card = styled.div<Partial<DefaultProps> & ICardProps>`
   height: ${({ height }) => height};
   width: ${({ width }) => width};
   ${({ css }) => css}
+  &:hover {
+    box-shadow: 6px 6px 13px 2px rgba(0,0,0,0.3);
+  }
+  
 `;
