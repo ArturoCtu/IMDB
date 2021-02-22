@@ -5,7 +5,7 @@ interface IContainerProps {
 }
 
 export const Container = styled.div<IContainerProps>`
-  margin: auto 50px;
+  margin:  50px;
   width: 100%;
   ${({ css }) => css}
 `;

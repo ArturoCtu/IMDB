@@ -3,16 +3,28 @@ import "antd/dist/antd.css";
 import { Card } from "shared/atoms/Card";
 import { Image } from "shared/atoms/Image";
 import { CardInfo } from "shared/molecules/CardInfo";
+import { useHistory } from "react-router-dom";
 
 interface IMovieCardProps {
- title: string;
- description: string;
- poster: string;
+  id: string;
+  title: string;
+  poster: string;
+  rating: string;
 }
 
-export const MovieCard: React.FC<IMovieCardProps> = ({ title, description, poster }) => {
+export const MovieCard: React.FC<IMovieCardProps> = ({
+  id,
+  title,
+  poster,
+  rating,
+}) => {
+  const history = useHistory();
+  const goToMovie = (id: string) => {
+    history.push(`/movie/${id}`)
+  }
+
   return (
-    <Card width="230px">
+    <Card width="230px" onClick={()=>goToMovie(id)}>
       <Image
         src={poster}
         aria-label={`${title} Poster`}
@@ -21,10 +33,7 @@ export const MovieCard: React.FC<IMovieCardProps> = ({ title, description, poste
           border-top-right-radius: 5px;
         `}
       />
-      <CardInfo
-        title={title}
-        description={description}
-      />
+      <CardInfo title={title} rating={`Rating: ${rating}/10`} />
     </Card>
   );
 };

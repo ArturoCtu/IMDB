@@ -14,6 +14,7 @@ export const Card = styled.div<Partial<DefaultProps> & ICardProps>`
   border-radius: 5px;
   border: 1px solid #dee2e6;
   box-shadow: 2px 2px 13px 2px rgba(0,0,0,0.15);
+  min-height: 252px; 
   height: ${({ height }) => height};
   width: ${({ width }) => width};
   ${({ css }) => css}
