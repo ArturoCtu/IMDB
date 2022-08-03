@@ -45,7 +45,7 @@ export const fetchMovies = async (listType: string) => {
 };
 
 export const getMovieById = async (id: string) => {
-  const requestURL = `${URL}/movie/${id}`
+  const requestURL = `${URL}/movie/${id}`;
   try {
     const { data } = await axios.get(requestURL, {
       params: {
@@ -54,6 +54,7 @@ export const getMovieById = async (id: string) => {
       },
     });
     console.log(data);
+
     const movieData = {
       id: data["id"],
       title: data["title"],
